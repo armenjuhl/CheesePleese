@@ -1,6 +1,5 @@
 package org.launchcode.controllers;
 
-import org.launchcode.models.Category;
 import org.launchcode.models.Cheese;
 import org.launchcode.models.data.CheeseDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +28,7 @@ public class CheeseController {
 
         model.addAttribute("cheeses", cheeseDao.findAll());
         model.addAttribute("title", "My Cheeses");
-
+        //model.addAttribute("menuDao.findAll(cheeses)");
         return "cheese/index";
     }
 
@@ -47,11 +46,11 @@ public class CheeseController {
             Errors errors,
             @RequestParam int categoryId,
             Model model) {
-        model.addAttribute("Category cat = categoryDao.findOne(categoryId)");
+        model.addAttribute("Category cat", "categoryDao.findOne(categoryId)");
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Cheese");
-            model.addAttribute("newCheese.setCategory(cat)");
+            model.addAttribute("newCheese", "newCheese.setCategory(cat)");
 
             return "cheese/add";
         }

@@ -22,10 +22,12 @@ public class CategoryController {
     //public findAll(){ArrayList <Object> allCategories;
     //allCategories = allCategories + name.CategoryDao}
 
+
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model) {
         model.addAttribute("title", "Categories");
         model.addAttribute("categories", categoryDao.findAll());
+        //model.addAttribute("menuDao.findAll(cheeses)");
         return "category/index";
     }
 

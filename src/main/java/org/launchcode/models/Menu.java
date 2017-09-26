@@ -1,5 +1,9 @@
 package org.launchcode.models;
 
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,13 +21,12 @@ public class Menu {
 
     @Id
     @GeneratedValue
-    private int id;
+    private static int id;
 
     @ManyToMany
-    private List<Cheese> Cheeses;
+    private List<Cheese> cheeses;
 
-
-public void addItem(Cheese item) {
+    public void addItem(Cheese item) {
     }
 
     public Menu(){}
@@ -31,7 +34,7 @@ public void addItem(Cheese item) {
     public Menu( String name){}
 
 
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
@@ -49,6 +52,6 @@ public void addItem(Cheese item) {
 
 
     public List<org.launchcode.models.Cheese> getCheeses() {
-        return Cheeses;
+        return cheeses;
     }
 }

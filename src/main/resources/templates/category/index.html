@@ -5,6 +5,8 @@
     <title th:text="${title}"> </title>
 </head>
 <body>
+<nav th:replace="fragments :: navigation"></nav>
+
 <div th:if="${categories} and ${categories.size()}">
 
 <ul>

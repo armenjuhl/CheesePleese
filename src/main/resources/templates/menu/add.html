@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"><head>
+    <meta charset="UTF-8">
+    <title>Add Menu</title>
+</head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+
+    <form th:object="${Menu}" method="post">
+
+            <div class="form-group">
+                <label th:for="type">Add Menu</label>
+                <select name="Menu.id">
+                    <option th:for="${Menu}"
+                            th:field="${Menu.name}"
+                            th:errors="${errors}"></option>
+                    <span th:for="${errors}"></span>
+                </select>
+            </div>
+        </form>
+
+</body>
+</html>
